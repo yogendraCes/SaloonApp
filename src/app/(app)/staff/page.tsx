@@ -1,7 +1,7 @@
 'use client';
 
 import { useStore, type Staff } from '@/store/useStore';
-import { Plus, X, Edit2, Trash2 } from 'lucide-react';
+import { Plus, X, Edit2, Trash2, Award, Home } from 'lucide-react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -12,6 +12,8 @@ const staffSchema = z.object({
   name: z.string().min(1, 'Name is required'),
   role: z.string().optional(),
   color: z.string().min(1, 'Color selection is required'),
+  commissionRate: z.number().min(0).max(100),
+  boothRent: z.number().min(0),
 });
 
 type StaffFormValues = z.infer<typeof staffSchema>;
@@ -41,6 +43,10 @@ export default function StaffPage() {
     formState: { errors },
   } = useForm<StaffFormValues>({
     resolver: zodResolver(staffSchema),
+    defaultValues: {
+      commissionRate: 70,
+      boothRent: 250,
+    },
   });
 
   const selectedColor = watch('color');
@@ -52,10 +58,18 @@ export default function StaffPage() {
         name: member.name,
         role: member.role,
         color: member.color,
+        commissionRate: member.commissionRate ?? 70,
+        boothRent: member.boothRent ?? 250,
       });
     } else {
       setEditingStaff(null);
-      reset({ name: '', role: '', color: STAFF_COLORS[0].value });
+      reset({
+        name: '',
+        role: '',
+        color: STAFF_COLORS[0].value,
+        commissionRate: 70,
+        boothRent: 250,
+      });
     }
     setIsModalOpen(true);
   };
@@ -69,6 +83,10 @@ export default function StaffPage() {
         name: data.name,
         role: data.role || '',
         color: data.color,
+        commissionRate: data.commissionRate,
+        boothRent: data.boothRent,
+        rating: 4.9,
+        workingDays: ['Mon', 'Tue', 'Wed', 'Fri', 'Sat'],
       });
     }
     setIsModalOpen(false);
@@ -78,8 +96,8 @@ export default function StaffPage() {
     <div className="p-4 md:p-8">
       <div className="flex flex-wrap justify-between items-center gap-4 mb-6 md:mb-8">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Staff Management</h1>
-          <p className="text-slate-500 mt-1">Manage your team and their calendar styling.</p>
+          <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Staff & Freelancer Management</h1>
+          <p className="text-slate-500 mt-1">Manage team members, commission splits, and chair rental rates.</p>
         </div>
         <button
           type="button"
@@ -87,7 +105,7 @@ export default function StaffPage() {
           className="flex items-center gap-2 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors font-semibold shadow-sm text-sm"
         >
           <Plus className="w-4 h-4" />
-          Add Staff
+          Add Staff / Freelancer
         </button>
       </div>
 
@@ -98,7 +116,9 @@ export default function StaffPage() {
               <tr className="bg-slate-50 border-b border-slate-200">
                 <th className="py-3 px-3 md:px-6 text-xs font-semibold text-slate-500 uppercase tracking-wider">Staff Name</th>
                 <th className="py-3 px-3 md:px-6 text-xs font-semibold text-slate-500 uppercase tracking-wider">Role</th>
-                <th className="py-3 px-3 md:px-6 text-xs font-semibold text-slate-500 uppercase tracking-wider">Calendar Preview</th>
+                <th className="py-3 px-3 md:px-6 text-xs font-semibold text-slate-500 uppercase tracking-wider">Commission Split</th>
+                <th className="py-3 px-3 md:px-6 text-xs font-semibold text-slate-500 uppercase tracking-wider">Daily Booth Rent</th>
+                <th className="py-3 px-3 md:px-6 text-xs font-semibold text-slate-500 uppercase tracking-wider">Calendar Style</th>
                 <th className="py-3 px-3 md:px-6 text-xs font-semibold text-slate-500 uppercase tracking-wider text-right">Actions</th>
               </tr>
             </thead>
@@ -114,6 +134,18 @@ export default function StaffPage() {
                     </div>
                   </td>
                   <td className="py-4 px-3 md:px-6 text-sm text-slate-600">{member.role || '—'}</td>
+                  <td className="py-4 px-3 md:px-6 text-sm font-bold text-indigo-600">
+                    <span className="bg-indigo-50 px-2.5 py-1 rounded-md border border-indigo-100 inline-flex items-center gap-1">
+                      <Award className="w-3.5 h-3.5 text-indigo-500" />
+                      {member.commissionRate}%
+                    </span>
+                  </td>
+                  <td className="py-4 px-3 md:px-6 text-sm font-semibold text-slate-700">
+                    <span className="bg-slate-100 px-2.5 py-1 rounded-md inline-flex items-center gap-1">
+                      <Home className="w-3.5 h-3.5 text-slate-400" />
+                      ₹{member.boothRent}/day
+                    </span>
+                  </td>
                   <td className="py-4 px-3 md:px-6">
                     <div className={cn("px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider border w-fit", member.color)}>
                       Sample Booking
@@ -137,13 +169,6 @@ export default function StaffPage() {
                   </td>
                 </tr>
               ))}
-              {staff.length === 0 && (
-                <tr>
-                  <td colSpan={4} className="py-12 text-center text-slate-400 text-sm">
-                    No staff found. Add your first team member!
-                  </td>
-                </tr>
-              )}
             </tbody>
           </table>
         </div>
@@ -182,11 +207,6 @@ export default function StaffPage() {
                   placeholder="e.g. John Doe"
                   className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
                 />
-                {errors.name && (
-                  <p className="mt-1 text-[10px] font-medium text-rose-500 uppercase tracking-tight">
-                    {errors.name.message}
-                  </p>
-                )}
               </div>
 
               <div>
@@ -199,6 +219,31 @@ export default function StaffPage() {
                   placeholder="e.g. Senior Stylist"
                   className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
                 />
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">
+                    Commission Rate (%)
+                  </label>
+                  <input
+                    type="number"
+                    {...register('commissionRate', { valueAsNumber: true })}
+                    placeholder="70"
+                    className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-bold text-indigo-600"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">
+                    Daily Rent (₹)
+                  </label>
+                  <input
+                    type="number"
+                    {...register('boothRent', { valueAsNumber: true })}
+                    placeholder="250"
+                    className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-semibold"
+                  />
+                </div>
               </div>
 
               <div>
@@ -222,11 +267,6 @@ export default function StaffPage() {
                     </button>
                   ))}
                 </div>
-                {errors.color && (
-                  <p className="mt-1 text-[10px] font-medium text-rose-500 uppercase tracking-tight">
-                    {errors.color.message}
-                  </p>
-                )}
               </div>
 
               <div className="flex justify-end gap-3 pt-6 border-t border-slate-100 mt-2">
@@ -251,3 +291,4 @@ export default function StaffPage() {
     </div>
   );
 }
+
