@@ -6,7 +6,6 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { cn } from '@/lib/utils';
 
 const serviceSchema = z.object({
   name: z.string().min(1, 'Name is required'),
@@ -62,7 +61,7 @@ export default function ServicesPage() {
       <div className="flex flex-wrap justify-between items-center gap-4 mb-6 md:mb-8">
         <div>
           <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Services</h1>
-          <p className="text-slate-500 mt-1">Configure your salon's service menu.</p>
+          <p className="text-slate-500 mt-1">Configure your salon&apos;s service menu.</p>
         </div>
         <button
           type="button"

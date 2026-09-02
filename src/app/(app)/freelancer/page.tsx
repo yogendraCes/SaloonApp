@@ -3,14 +3,11 @@
 import { useStore } from '@/store/useStore';
 import {
   Wallet,
-  TrendingUp,
-  DollarSign,
   Share2,
   Copy,
   Check,
   Calendar,
   Clock,
-  User,
   Star,
   Award,
   Scissors,
@@ -202,7 +199,7 @@ export default function FreelancerPortalPage() {
                           </p>
                           {app.notes && (
                             <p className="text-xs italic text-slate-500 mt-1 bg-slate-100 px-2.5 py-1 rounded-md">
-                              "{app.notes}"
+                              &quot;{app.notes}&quot;
                             </p>
                           )}
                         </div>
@@ -306,7 +303,7 @@ export default function FreelancerPortalPage() {
           <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
             <h3 className="text-base font-bold text-slate-900">Stylist Bio & Specialties</h3>
             <p className="text-xs text-slate-600 leading-relaxed italic bg-slate-50 p-3 rounded-lg border border-slate-100">
-              "{currentStylist.bio || 'Specialist in haircuts and coloring.'}"
+              &quot;{currentStylist.bio || 'Specialist in haircuts and coloring.'}&quot;
             </p>
             
             <div className="space-y-2">

@@ -40,7 +40,6 @@ export default function StaffPage() {
     reset,
     setValue,
     watch,
-    formState: { errors },
   } = useForm<StaffFormValues>({
     resolver: zodResolver(staffSchema),
     defaultValues: {
@@ -76,7 +75,7 @@ export default function StaffPage() {
 
   const onSubmit = (data: StaffFormValues) => {
     if (editingStaff) {
-      updateStaff(editingStaff.id, data as any);
+      updateStaff(editingStaff.id, data);
     } else {
       addStaff({
         id: `s-${Date.now()}`,

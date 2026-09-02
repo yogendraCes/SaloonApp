@@ -27,7 +27,7 @@ export default function DashboardPage() {
     <div className="p-4 md:p-8">
       <div className="mb-8">
         <h1 className="text-2xl font-bold text-slate-900">Dashboard</h1>
-        <p className="text-slate-500 mt-1">Welcome back. Here's what's happening today.</p>
+        <p className="text-slate-500 mt-1">Welcome back. Here&apos;s what&apos;s happening today.</p>
       </div>
 
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-8">
@@ -58,7 +58,7 @@ export default function DashboardPage() {
 
       <div className="bg-white shadow-sm rounded-lg border border-slate-200 overflow-hidden">
         <div className="p-5 border-b border-slate-200">
-          <h2 className="text-lg font-bold text-slate-900">Today's Appointments</h2>
+          <h2 className="text-lg font-bold text-slate-900">Today&apos;s Appointments</h2>
         </div>
         <div className="p-5">
           {todayAppointments.length > 0 ? (

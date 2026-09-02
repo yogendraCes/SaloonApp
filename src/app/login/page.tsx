@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { Scissors, Eye, EyeOff } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';

@@ -1,6 +1,6 @@
 'use client';
 
-import { useStore, type Customer } from '@/store/useStore';
+import { useStore } from '@/store/useStore';
 import { Search, Plus, X } from 'lucide-react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';

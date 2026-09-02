@@ -1,7 +1,7 @@
 'use client';
 
 import { useStore } from '@/store/useStore';
-import { Download, CheckCircle2, FileText, Check } from 'lucide-react';
+import { Download, CheckCircle2, FileText } from 'lucide-react';
 import { useState } from 'react';
 
 export default function BillingPage() {
