@@ -120,8 +120,8 @@ export default function LoginPage() {
               </div>
             )}
 
-            {/* Submit */}
-            <div>
+            {/* Submit & Demo Gate Buttons */}
+            <div className="space-y-3">
               <button
                 type="submit"
                 disabled={isLoading}
@@ -132,6 +132,14 @@ export default function LoginPage() {
                 ) : (
                   'Sign in'
                 )}
+              </button>
+
+              <button
+                type="button"
+                onClick={() => router.push('/dashboard')}
+                className="w-full flex justify-center items-center py-2.5 px-4 border border-slate-300 rounded-md shadow-xs text-sm font-semibold text-slate-700 bg-slate-50 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors"
+              >
+                🚀 Quick Portfolio Demo — Bypasses Auth
               </button>
             </div>
           </form>

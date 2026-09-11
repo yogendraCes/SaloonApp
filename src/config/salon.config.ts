@@ -43,7 +43,7 @@ export interface SalonConfig {
   };
   testimonials: {
     name: string;
-    avatar: string;
+    initials: string;
     rating: number;
     review: string;
     serviceTaken: string;
@@ -163,7 +163,7 @@ export const SALON_CONFIG: SalonConfig = {
   testimonials: [
     {
       name: "Rohan Verma",
-      avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80",
+      initials: "RV",
       rating: 5,
       review:
         "The best haircut experience in Bangalore. Aisha took the time to understand my face structure before cutting. The online booking made it effortless — zero waiting time when I arrived.",
@@ -172,7 +172,7 @@ export const SALON_CONFIG: SalonConfig = {
     },
     {
       name: "Pooja Hegde",
-      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80",
+      initials: "PH",
       rating: 5,
       review:
         "Got my balayage done here by Marcus. The color blend is so smooth and natural. The ambiance is pure luxury and the coffee while you wait is amazing!",
@@ -181,7 +181,7 @@ export const SALON_CONFIG: SalonConfig = {
     },
     {
       name: "Vikramaditya Rao",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80",
+      initials: "VR",
       rating: 5,
       review:
         "The Royal Beard Grooming with the charcoal steam towel is next level. Loved that I could book my exact 6:30 PM slot from my phone and get a WhatsApp confirmation immediately.",

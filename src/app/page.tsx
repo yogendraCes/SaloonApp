@@ -618,11 +618,9 @@ export default function SalonPublicStorefront() {
 
               <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <img
-                    src={testi.avatar}
-                    alt={testi.name}
-                    className="w-10 h-10 rounded-full object-cover border border-amber-500/30"
-                  />
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-500 to-amber-300 text-slate-950 font-extrabold text-xs flex items-center justify-center border border-amber-400/40 shadow-sm">
+                    {testi.initials}
+                  </div>
                   <div>
                     <h4 className="text-xs font-bold text-white">{testi.name}</h4>
                     <p className="text-[11px] text-amber-400/90">{testi.serviceTaken}</p>

@@ -35,7 +35,10 @@ export function RoleSwitcherBar() {
           <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
           <span>Interactive Role Demo</span>
         </div>
-        <span className="hidden sm:inline text-slate-400">Switch workspace view:</span>
+        <span className="hidden md:inline-flex items-center gap-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded text-[10px] font-medium">
+          Public Demo • Open Access
+        </span>
+        <span className="hidden lg:inline text-slate-400">Switch workspace view:</span>
       </div>
 
       <div className="flex items-center flex-wrap gap-2">
