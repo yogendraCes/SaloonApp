@@ -87,29 +87,29 @@ export default function SalonPublicStorefront() {
   }, [services, selectedCategory]);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-amber-500 selection:text-slate-950">
+    <div className="min-h-screen bg-[#1C1A17] text-[#E8E5DF] font-sans selection:bg-[#A49A87] selection:text-[#1C1A17] pb-24 md:pb-0">
       {/* ── TOP ANNOUNCEMENT BAR ── */}
-      <div className="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-700 text-slate-950 text-xs font-bold py-2 px-4 text-center tracking-wide flex items-center justify-center gap-2">
-        <Sparkles className="w-3.5 h-3.5" />
-        <span>Book online today & get a complimentary Kerastase hair ritual consultation</span>
-        <Link href="/book" className="underline underline-offset-2 ml-1 hover:text-white transition-colors">
+      <div className="bg-gradient-to-r from-[#8C8270] via-[#A49A87] to-[#A5A58D] text-[#1C1A17] text-[11px] sm:text-xs font-bold py-1.5 px-3 text-center tracking-wide flex items-center justify-center gap-1.5 leading-snug">
+        <Sparkles className="w-3.5 h-3.5 flex-shrink-0" />
+        <span className="truncate">Book online today & get a complimentary Kerastase ritual consultation</span>
+        <Link href="/book" className="underline underline-offset-2 ml-1 hover:text-white transition-colors flex-shrink-0 font-extrabold">
           Claim Slot &rarr;
         </Link>
       </div>
 
       {/* ── LUXURY STICKY NAVBAR ── */}
       <header className="sticky top-0 z-50 bg-[#1C1A17]/95 backdrop-blur-md border-b border-[#968F83]/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2">
           {/* Brand Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-tr from-[#A49A87] to-[#A5A58D] text-[#1C1A17] flex items-center justify-center shadow-lg shadow-[#A49A87]/20 group-hover:scale-105 transition-transform">
-              <Scissors className="w-6 h-6 stroke-[2.2]" />
+          <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group min-w-0">
+            <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-tr from-[#A49A87] to-[#A5A58D] text-[#1C1A17] flex items-center justify-center shadow-lg shadow-[#A49A87]/20 group-hover:scale-105 transition-transform flex-shrink-0">
+              <Scissors className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.2]" />
             </div>
-            <div>
-              <span className="text-xl font-extrabold tracking-tight text-[#E8E5DF] block leading-tight">
-                {SALON_CONFIG.name}
+            <div className="min-w-0">
+              <span className="text-base sm:text-xl font-extrabold tracking-tight text-[#E8E5DF] block leading-tight truncate">
+                {SALON_CONFIG.shortName}
               </span>
-              <span className="text-[11px] text-[#A49A87] font-medium tracking-widest uppercase">
+              <span className="hidden sm:block text-[11px] text-[#A49A87] font-medium tracking-widest uppercase truncate">
                 {SALON_CONFIG.tagline}
               </span>
             </div>
@@ -138,7 +138,7 @@ export default function SalonPublicStorefront() {
           </nav>
 
           {/* Actions: Book Now + Staff Portal + Mobile Toggle */}
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-2 flex-shrink-0">
             <Link
               href="/dashboard"
               className="hidden lg:flex items-center gap-1.5 text-xs text-[#B3ADA6] hover:text-[#E8E5DF] px-3 py-2 rounded-lg border border-[#968F83]/40 hover:border-[#A49A87] transition-colors"
@@ -148,10 +148,10 @@ export default function SalonPublicStorefront() {
             </Link>
             <Link
               href="/book"
-              className="bg-[#A49A87] hover:bg-[#B3A794] text-[#1C1A17] font-bold px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm transition-all shadow-lg shadow-[#A49A87]/20 flex items-center gap-1.5 sm:gap-2 hover:scale-[1.02] active:scale-[0.98]"
+              className="bg-[#A49A87] hover:bg-[#B3A794] text-[#1C1A17] font-bold px-3 py-2 sm:px-5 sm:py-2.5 rounded-xl text-xs sm:text-sm transition-all shadow-lg shadow-[#A49A87]/20 flex items-center gap-1.5 hover:scale-[1.02] active:scale-[0.98]"
             >
               <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              <span>Book Appointment</span>
+              <span>Book <span className="hidden sm:inline">Appointment</span></span>
             </Link>
 
             {/* Mobile Hamburger Toggle */}
@@ -235,7 +235,7 @@ export default function SalonPublicStorefront() {
       </header>
 
       {/* ── HERO SECTION ── */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[80vh] sm:min-h-[85vh] flex items-center justify-center overflow-hidden">
         {/* Background Image with Luxury Vignette Overlay */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 scale-105 transition-transform duration-1000"
@@ -245,32 +245,32 @@ export default function SalonPublicStorefront() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#A49A87]/15 via-transparent to-transparent z-10" />
 
         {/* Content */}
-        <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+        <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-12 sm:py-20">
           {/* Trust Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#262420]/90 border border-[#A49A87]/40 text-[#E8E5DF] text-xs font-semibold mb-6 shadow-inner backdrop-blur-sm">
-            <Star className="w-3.5 h-3.5 fill-[#A49A87] text-[#A49A87]" />
+          <div className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-full bg-[#262420]/90 border border-[#A49A87]/40 text-[#E8E5DF] text-[11px] sm:text-xs font-semibold mb-5 shadow-inner backdrop-blur-sm max-w-[95%] sm:max-w-none mx-auto leading-tight">
+            <Star className="w-3.5 h-3.5 fill-[#A49A87] text-[#A49A87] flex-shrink-0" />
             <span>4.9 Star Google Rating (520+ Verified Reviews in Indiranagar)</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#E8E5DF] leading-[1.1] mb-6">
+          <h1 className="text-3xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#E8E5DF] leading-[1.15] mb-5">
             Where Style Meets <br />
             <span className="bg-gradient-to-r from-[#E8E5DF] via-[#A49A87] to-[#A5A58D] bg-clip-text text-transparent">
               Precision & Luxury
             </span>
           </h1>
 
-          <p className="max-w-2xl mx-auto text-base sm:text-lg text-[#CCC8C3] mb-10 leading-relaxed font-light">
+          <p className="max-w-2xl mx-auto text-sm sm:text-lg text-[#CCC8C3] mb-8 leading-relaxed font-light">
             {SALON_CONFIG.description}
           </p>
 
           {/* Dual CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5">
             <Link
               href="/book"
-              className="w-full sm:w-auto bg-[#A49A87] hover:bg-[#B3A794] text-[#1C1A17] font-extrabold px-8 py-4 rounded-xl text-base transition-all shadow-xl shadow-[#A49A87]/30 flex items-center justify-center gap-3 group"
+              className="w-full sm:w-auto bg-[#A49A87] hover:bg-[#B3A794] text-[#1C1A17] font-extrabold px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl text-sm sm:text-base transition-all shadow-xl shadow-[#A49A87]/30 flex items-center justify-center gap-2.5 group"
             >
               <span>Book Your Appointment Online</span>
-              <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
 
             <a
@@ -279,30 +279,30 @@ export default function SalonPublicStorefront() {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto bg-[#262420]/90 hover:bg-[#332F2A] text-[#E8E5DF] font-semibold px-6 py-4 rounded-xl text-base transition-all border border-[#968F83]/40 flex items-center justify-center gap-2.5"
+              className="w-full sm:w-auto bg-[#262420]/90 hover:bg-[#332F2A] text-[#E8E5DF] font-semibold px-5 py-3.5 sm:px-6 sm:py-4 rounded-xl text-sm sm:text-base transition-all border border-[#968F83]/40 flex items-center justify-center gap-2"
             >
-              <MessageSquare className="w-5 h-5 text-[#A5A58D]" />
+              <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 text-[#A5A58D]" />
               <span>Chat on WhatsApp</span>
             </a>
           </div>
 
           {/* Quick Stats Pills */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 max-w-4xl mx-auto">
-            <div className="bg-slate-900/70 backdrop-blur-md border border-slate-800/80 p-4 rounded-xl">
-              <p className="text-2xl sm:text-3xl font-extrabold text-amber-400">{SALON_CONFIG.stats.happyClients}</p>
-              <p className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-semibold">Clients Styled</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mt-10 sm:mt-16 max-w-4xl mx-auto">
+            <div className="bg-[#262420]/80 backdrop-blur-md border border-[#968F83]/30 p-3.5 sm:p-4 rounded-xl">
+              <p className="text-xl sm:text-3xl font-extrabold text-[#A49A87]">{SALON_CONFIG.stats.happyClients}</p>
+              <p className="text-[10px] sm:text-xs text-[#968F83] mt-0.5 uppercase tracking-wider font-semibold">Clients Styled</p>
             </div>
-            <div className="bg-slate-900/70 backdrop-blur-md border border-slate-800/80 p-4 rounded-xl">
-              <p className="text-2xl sm:text-3xl font-extrabold text-amber-400">{SALON_CONFIG.stats.rating} ★</p>
-              <p className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-semibold">Google Rating</p>
+            <div className="bg-[#262420]/80 backdrop-blur-md border border-[#968F83]/30 p-3.5 sm:p-4 rounded-xl">
+              <p className="text-xl sm:text-3xl font-extrabold text-[#A49A87]">{SALON_CONFIG.stats.rating} ★</p>
+              <p className="text-[10px] sm:text-xs text-[#968F83] mt-0.5 uppercase tracking-wider font-semibold">Google Rating</p>
             </div>
-            <div className="bg-slate-900/70 backdrop-blur-md border border-slate-800/80 p-4 rounded-xl">
-              <p className="text-2xl sm:text-3xl font-extrabold text-amber-400">{SALON_CONFIG.stats.stylistsCount} Masters</p>
-              <p className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-semibold">Expert Stylists</p>
+            <div className="bg-[#262420]/80 backdrop-blur-md border border-[#968F83]/30 p-3.5 sm:p-4 rounded-xl">
+              <p className="text-xl sm:text-3xl font-extrabold text-[#A49A87]">{SALON_CONFIG.stats.stylistsCount} Masters</p>
+              <p className="text-[10px] sm:text-xs text-[#968F83] mt-0.5 uppercase tracking-wider font-semibold">Expert Stylists</p>
             </div>
-            <div className="bg-slate-900/70 backdrop-blur-md border border-slate-800/80 p-4 rounded-xl">
-              <p className="text-2xl sm:text-3xl font-extrabold text-amber-400">Zero Wait</p>
-              <p className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-semibold">Instant Reserved Slot</p>
+            <div className="bg-[#262420]/80 backdrop-blur-md border border-[#968F83]/30 p-3.5 sm:p-4 rounded-xl">
+              <p className="text-xl sm:text-3xl font-extrabold text-[#A49A87]">Zero Wait</p>
+              <p className="text-[10px] sm:text-xs text-[#968F83] mt-0.5 uppercase tracking-wider font-semibold">Instant Reserved</p>
             </div>
           </div>
         </div>
@@ -821,28 +821,28 @@ export default function SalonPublicStorefront() {
       </footer>
 
       {/* ── MOBILE FLOATING STICKY BOOKING BAR ── */}
-      <div className="md:hidden fixed bottom-4 inset-x-4 z-40">
-        <div className="bg-slate-900/95 backdrop-blur-xl border border-amber-500/40 rounded-2xl p-2.5 shadow-2xl shadow-black/90 flex items-center justify-between">
-          <div className="flex items-center gap-2 pl-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+      <div className="md:hidden fixed bottom-3 inset-x-3 z-40">
+        <div className="bg-[#1C1A17]/95 backdrop-blur-xl border border-[#A49A87]/40 rounded-2xl p-2.5 shadow-2xl shadow-black/80 flex items-center justify-between">
+          <div className="flex items-center gap-2 pl-1.5">
+            <span className="w-2 h-2 rounded-full bg-[#A5A58D] animate-pulse" />
             <div>
-              <span className="text-xs font-bold text-white block leading-tight">{SALON_CONFIG.shortName}</span>
-              <span className="text-[10px] text-amber-400 font-medium">Slots available today</span>
+              <span className="text-xs font-bold text-[#E8E5DF] block leading-tight">{SALON_CONFIG.shortName}</span>
+              <span className="text-[10px] text-[#A49A87] font-medium">Slots available today</span>
             </div>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5">
             <a
               href={`https://wa.me/${SALON_CONFIG.contact.whatsappNumber}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 rounded-xl bg-emerald-600/20 text-emerald-400 border border-emerald-500/30"
+              className="p-2.5 rounded-xl bg-[#A5A58D]/20 text-[#A5A58D] border border-[#A5A58D]/30"
               aria-label="WhatsApp"
             >
               <MessageSquare className="w-4 h-4" />
             </a>
             <Link
               href="/book"
-              className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs px-4 py-2.5 rounded-xl shadow-md flex items-center gap-1"
+              className="bg-[#A49A87] hover:bg-[#B3A794] text-[#1C1A17] font-extrabold text-xs px-3.5 py-2.5 rounded-xl shadow-md flex items-center gap-1"
             >
               <span>Book Slot</span>
               <ChevronRight className="w-3.5 h-3.5" />
