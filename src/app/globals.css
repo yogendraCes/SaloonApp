@@ -3,13 +3,18 @@
 @theme {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
-  /* Requested Warm Palette: #A49A87, #A5A58D, #968F83, #E8E5DF */
+  /* ── User-Specified Warm Palette ──
+     #A49A87 (Warm Taupe)
+     #A5A58D (Warm Sage)
+     #968F83 (Warm Stone Gray)
+     #E8E5DF (Warm Off-White / Soft Cream)
+  */
   --color-warm-50: #F9F8F6;
-  --color-warm-100: #E8E5DF; /* requested #E8E5DF */
+  --color-warm-100: #E8E5DF; /* #E8E5DF */
   --color-warm-200: #D8D3C8;
   --color-warm-300: #C2B8A8;
   --color-warm-400: #B3A794;
-  --color-warm-500: #A49A87; /* requested #A49A87 */
+  --color-warm-500: #A49A87; /* #A49A87 */
   --color-warm-600: #8C8270;
   --color-warm-700: #6F6656;
   --color-warm-800: #4B453A;
@@ -19,7 +24,7 @@
   --color-sage-100: #F4F4F0;
   --color-sage-200: #E4E4D9;
   --color-sage-300: #C7C7B2;
-  --color-sage-400: #A5A58D; /* requested #A5A58D */
+  --color-sage-400: #A5A58D; /* #A5A58D */
   --color-sage-500: #8C8C72;
   --color-sage-600: #71715A;
   --color-sage-700: #555543;
@@ -29,25 +34,81 @@
   --color-stone-200: #E6E4E1;
   --color-stone-300: #CCC8C3;
   --color-stone-400: #B3ADA6;
-  --color-stone-500: #968F83; /* requested #968F83 */
+  --color-stone-500: #968F83; /* #968F83 */
   --color-stone-600: #7C756A;
   --color-stone-700: #605B52;
-  --color-stone-800: #423F39;
+  --color-stone-800: #332F2A;
   --color-stone-900: #262420;
-  --color-stone-950: #1A1916;
+  --color-stone-950: #1C1A17;
 
-  /* Aliases to map legacy color classes seamlessly to the new warm theme */
-  --color-amber-400: #A49A87;
-  --color-amber-500: #A49A87;
-  --color-amber-600: #8C8270;
-  --color-amber-300: #C2B8A8;
-  --color-amber-200: #D8D3C8;
+  /* ── 100% Elimination of Blue Tones across default Tailwind Palette Aliases ── */
+  --color-slate-50: #F9F8F6;
+  --color-slate-100: #E8E5DF; /* #E8E5DF */
+  --color-slate-200: #D8D3C8;
+  --color-slate-300: #CCC8C3;
+  --color-slate-400: #B3ADA6;
+  --color-slate-500: #968F83; /* #968F83 */
+  --color-slate-600: #7C756A;
+  --color-slate-700: #605B52;
+  --color-slate-800: #332F2A;
+  --color-slate-900: #262420;
+  --color-slate-950: #1C1A17;
+
+  --color-indigo-50: #F5F4F0;
+  --color-indigo-100: #E8E5DF; /* #E8E5DF */
+  --color-indigo-200: #D8D3C8;
+  --color-indigo-300: #C2B8A8;
+  --color-indigo-400: #B3A794;
+  --color-indigo-500: #A49A87; /* #A49A87 */
+  --color-indigo-600: #A49A87; /* #A49A87 */
+  --color-indigo-700: #8C8270;
+  --color-indigo-800: #6F6656;
+  --color-indigo-900: #4B453A;
+  --color-indigo-950: #1C1A17;
+
+  --color-blue-50: #F4F4F0;
+  --color-blue-100: #E4E4D9;
+  --color-blue-200: #C7C7B2;
+  --color-blue-300: #C7C7B2;
+  --color-blue-400: #A5A58D;
+  --color-blue-500: #A5A58D; /* #A5A58D */
+  --color-blue-600: #8C8C72;
+  --color-blue-700: #71715A;
+  --color-blue-800: #555543;
+  --color-blue-900: #3C3C2E;
+
+  --color-amber-50: #F9F8F6;
   --color-amber-100: #E8E5DF;
+  --color-amber-200: #D8D3C8;
+  --color-amber-300: #C2B8A8;
+  --color-amber-400: #A49A87; /* #A49A87 */
+  --color-amber-500: #A49A87; /* #A49A87 */
+  --color-amber-600: #8C8270;
+  --color-amber-700: #6F6656;
+  --color-amber-800: #4B453A;
 
-  --color-indigo-600: #8C8270;
-  --color-indigo-700: #6F6656;
-  --color-indigo-50: #E8E5DF;
-  --color-indigo-100: #D8D3C8;
+  --color-gray-50: #F9F8F6;
+  --color-gray-100: #E8E5DF;
+  --color-gray-200: #D8D3C8;
+  --color-gray-300: #CCC8C3;
+  --color-gray-400: #B3ADA6;
+  --color-gray-500: #968F83;
+  --color-gray-600: #7C756A;
+  --color-gray-700: #605B52;
+  --color-gray-800: #332F2A;
+  --color-gray-900: #262420;
+
+  --color-zinc-50: #F9F8F6;
+  --color-zinc-100: #E8E5DF;
+  --color-zinc-200: #D8D3C8;
+  --color-zinc-300: #CCC8C3;
+  --color-zinc-400: #B3ADA6;
+  --color-zinc-500: #968F83;
+  --color-zinc-600: #7C756A;
+  --color-zinc-700: #605B52;
+  --color-zinc-800: #332F2A;
+  --color-zinc-900: #262420;
+  --color-zinc-950: #1C1A17;
 }
 
 @layer base {
@@ -77,4 +138,3 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
 }
-
