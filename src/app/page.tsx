@@ -98,41 +98,41 @@ export default function SalonPublicStorefront() {
       </div>
 
       {/* ── LUXURY STICKY NAVBAR ── */}
-      <header className="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800/80">
+      <header className="sticky top-0 z-50 bg-[#1C1A17]/95 backdrop-blur-md border-b border-[#968F83]/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           {/* Brand Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-tr from-amber-500 to-amber-300 text-slate-950 flex items-center justify-center shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
+            <div className="w-11 h-11 rounded-xl bg-gradient-to-tr from-[#A49A87] to-[#A5A58D] text-[#1C1A17] flex items-center justify-center shadow-lg shadow-[#A49A87]/20 group-hover:scale-105 transition-transform">
               <Scissors className="w-6 h-6 stroke-[2.2]" />
             </div>
             <div>
-              <span className="text-xl font-extrabold tracking-tight text-white block leading-tight">
+              <span className="text-xl font-extrabold tracking-tight text-[#E8E5DF] block leading-tight">
                 {SALON_CONFIG.name}
               </span>
-              <span className="text-[11px] text-amber-400 font-medium tracking-widest uppercase">
+              <span className="text-[11px] text-[#A49A87] font-medium tracking-widest uppercase">
                 {SALON_CONFIG.tagline}
               </span>
             </div>
           </Link>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-            <a href="#services" className="hover:text-amber-400 transition-colors">
+          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-[#CCC8C3]">
+            <a href="#services" className="hover:text-[#A49A87] transition-colors">
               Services & Prices
             </a>
-            <a href="#ambiance" className="hover:text-amber-400 transition-colors">
+            <a href="#ambiance" className="hover:text-[#A49A87] transition-colors">
               Salon Ambiance
             </a>
-            <a href="#stylists" className="hover:text-amber-400 transition-colors">
+            <a href="#stylists" className="hover:text-[#A49A87] transition-colors">
               Master Stylists
             </a>
-            <a href="#lookbook" className="hover:text-amber-400 transition-colors">
+            <a href="#lookbook" className="hover:text-[#A49A87] transition-colors">
               Lookbook
             </a>
-            <a href="#reviews" className="hover:text-amber-400 transition-colors">
+            <a href="#reviews" className="hover:text-[#A49A87] transition-colors">
               Reviews
             </a>
-            <a href="#location" className="hover:text-amber-400 transition-colors">
+            <a href="#location" className="hover:text-[#A49A87] transition-colors">
               Location & Hours
             </a>
           </nav>
@@ -141,14 +141,14 @@ export default function SalonPublicStorefront() {
           <div className="flex items-center gap-2.5">
             <Link
               href="/dashboard"
-              className="hidden lg:flex items-center gap-1.5 text-xs text-slate-400 hover:text-white px-3 py-2 rounded-lg border border-slate-800 hover:border-slate-700 transition-colors"
+              className="hidden lg:flex items-center gap-1.5 text-xs text-[#B3ADA6] hover:text-[#E8E5DF] px-3 py-2 rounded-lg border border-[#968F83]/40 hover:border-[#A49A87] transition-colors"
             >
-              <Building2 className="w-3.5 h-3.5 text-amber-400" />
+              <Building2 className="w-3.5 h-3.5 text-[#A49A87]" />
               <span>Staff Portal</span>
             </Link>
             <Link
               href="/book"
-              className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm transition-all shadow-lg shadow-amber-500/20 flex items-center gap-1.5 sm:gap-2 hover:scale-[1.02] active:scale-[0.98]"
+              className="bg-[#A49A87] hover:bg-[#B3A794] text-[#1C1A17] font-bold px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm transition-all shadow-lg shadow-[#A49A87]/20 flex items-center gap-1.5 sm:gap-2 hover:scale-[1.02] active:scale-[0.98]"
             >
               <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               <span>Book Appointment</span>
@@ -158,7 +158,7 @@ export default function SalonPublicStorefront() {
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-colors"
+              className="md:hidden p-2 rounded-xl bg-[#262420] border border-[#968F83]/40 text-[#CCC8C3] hover:text-white transition-colors"
               aria-label="Toggle Menu"
             >
               {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -168,63 +168,63 @@ export default function SalonPublicStorefront() {
 
         {/* Mobile Navigation Drawer */}
         {isMobileMenuOpen && (
-          <div className="md:hidden border-b border-slate-800 bg-slate-950/98 backdrop-blur-2xl px-5 py-4 space-y-3 animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="md:hidden border-b border-[#968F83]/40 bg-[#1C1A17]/98 backdrop-blur-2xl px-5 py-4 space-y-3 animate-in fade-in slide-in-from-top-2 duration-200">
             <a
               href="#services"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block text-sm font-medium text-slate-200 hover:text-amber-400 py-1"
+              className="block text-sm font-medium text-[#E8E5DF] hover:text-[#A49A87] py-1"
             >
               Services & Prices
             </a>
             <a
               href="#ambiance"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block text-sm font-medium text-slate-200 hover:text-amber-400 py-1"
+              className="block text-sm font-medium text-[#E8E5DF] hover:text-[#A49A87] py-1"
             >
               Salon Ambiance
             </a>
             <a
               href="#stylists"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block text-sm font-medium text-slate-200 hover:text-amber-400 py-1"
+              className="block text-sm font-medium text-[#E8E5DF] hover:text-[#A49A87] py-1"
             >
               Master Stylists
             </a>
             <a
               href="#lookbook"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block text-sm font-medium text-slate-200 hover:text-amber-400 py-1"
+              className="block text-sm font-medium text-[#E8E5DF] hover:text-[#A49A87] py-1"
             >
               Lookbook
             </a>
             <a
               href="#reviews"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block text-sm font-medium text-slate-200 hover:text-amber-400 py-1"
+              className="block text-sm font-medium text-[#E8E5DF] hover:text-[#A49A87] py-1"
             >
               Reviews
             </a>
             <a
               href="#location"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block text-sm font-medium text-slate-200 hover:text-amber-400 py-1"
+              className="block text-sm font-medium text-[#E8E5DF] hover:text-[#A49A87] py-1"
             >
               Location & Hours
             </a>
-            <div className="pt-3 border-t border-slate-800 flex items-center justify-between">
+            <div className="pt-3 border-t border-[#968F83]/30 flex items-center justify-between">
               <Link
                 href="/dashboard"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-xs text-slate-400 hover:text-white flex items-center gap-1.5"
+                className="text-xs text-[#B3ADA6] hover:text-[#E8E5DF] flex items-center gap-1.5"
               >
-                <Building2 className="w-3.5 h-3.5 text-amber-400" />
+                <Building2 className="w-3.5 h-3.5 text-[#A49A87]" />
                 <span>Staff Portal</span>
               </Link>
               <a
                 href={`https://wa.me/${SALON_CONFIG.contact.whatsappNumber}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs font-semibold text-emerald-400 flex items-center gap-1"
+                className="text-xs font-semibold text-[#A5A58D] flex items-center gap-1"
               >
                 <MessageSquare className="w-3.5 h-3.5" />
                 <span>WhatsApp Us</span>
@@ -241,25 +241,25 @@ export default function SalonPublicStorefront() {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 scale-105 transition-transform duration-1000"
           style={{ backgroundImage: `url(${SALON_CONFIG.media.heroImage})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/85 to-slate-950/60 z-10" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-500/10 via-transparent to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1C1A17] via-[#1C1A17]/85 to-[#1C1A17]/60 z-10" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#A49A87]/15 via-transparent to-transparent z-10" />
 
         {/* Content */}
         <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
           {/* Trust Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-amber-500/30 text-amber-300 text-xs font-semibold mb-6 shadow-inner backdrop-blur-sm">
-            <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#262420]/90 border border-[#A49A87]/40 text-[#E8E5DF] text-xs font-semibold mb-6 shadow-inner backdrop-blur-sm">
+            <Star className="w-3.5 h-3.5 fill-[#A49A87] text-[#A49A87]" />
             <span>4.9 Star Google Rating (520+ Verified Reviews in Indiranagar)</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.1] mb-6">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#E8E5DF] leading-[1.1] mb-6">
             Where Style Meets <br />
-            <span className="bg-gradient-to-r from-amber-200 via-amber-400 to-amber-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#E8E5DF] via-[#A49A87] to-[#A5A58D] bg-clip-text text-transparent">
               Precision & Luxury
             </span>
           </h1>
 
-          <p className="max-w-2xl mx-auto text-base sm:text-lg text-slate-300 mb-10 leading-relaxed font-light">
+          <p className="max-w-2xl mx-auto text-base sm:text-lg text-[#CCC8C3] mb-10 leading-relaxed font-light">
             {SALON_CONFIG.description}
           </p>
 
@@ -267,7 +267,7 @@ export default function SalonPublicStorefront() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/book"
-              className="w-full sm:w-auto bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-8 py-4 rounded-xl text-base transition-all shadow-xl shadow-amber-500/30 flex items-center justify-center gap-3 group"
+              className="w-full sm:w-auto bg-[#A49A87] hover:bg-[#B3A794] text-[#1C1A17] font-extrabold px-8 py-4 rounded-xl text-base transition-all shadow-xl shadow-[#A49A87]/30 flex items-center justify-center gap-3 group"
             >
               <span>Book Your Appointment Online</span>
               <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -279,9 +279,9 @@ export default function SalonPublicStorefront() {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto bg-slate-900/90 hover:bg-slate-800 text-white font-semibold px-6 py-4 rounded-xl text-base transition-all border border-slate-700 flex items-center justify-center gap-2.5"
+              className="w-full sm:w-auto bg-[#262420]/90 hover:bg-[#332F2A] text-[#E8E5DF] font-semibold px-6 py-4 rounded-xl text-base transition-all border border-[#968F83]/40 flex items-center justify-center gap-2.5"
             >
-              <MessageSquare className="w-5 h-5 text-emerald-400" />
+              <MessageSquare className="w-5 h-5 text-[#A5A58D]" />
               <span>Chat on WhatsApp</span>
             </a>
           </div>
@@ -479,11 +479,11 @@ export default function SalonPublicStorefront() {
       {/* ── SECTION 3: MEET OUR MASTER STYLISTS ── */}
       <section id="stylists" className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-xs font-bold text-amber-400 uppercase tracking-widest">Master Artists</span>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mt-1">
+          <span className="text-xs font-bold text-[#A49A87] uppercase tracking-widest">Master Artists</span>
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#E8E5DF] tracking-tight mt-1">
             Meet Your Personal Stylists
           </h2>
-          <p className="text-slate-400 mt-3 text-sm sm:text-base">
+          <p className="text-[#968F83] mt-3 text-sm sm:text-base">
             Trained internationally. Passionate about detail. Choose your stylist when you book your appointment.
           </p>
         </div>
@@ -492,27 +492,27 @@ export default function SalonPublicStorefront() {
           {staff.map((member) => (
             <div
               key={member.id}
-              className="bg-slate-900/60 border border-slate-800 hover:border-amber-500/40 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group shadow-lg"
+              className="bg-[#262420]/80 border border-[#968F83]/30 hover:border-[#A49A87]/60 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group shadow-lg"
             >
               <div>
                 <div className="flex items-center gap-3">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-amber-500 to-amber-300 text-slate-950 font-extrabold text-xl flex items-center justify-center shadow-md">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-[#A49A87] to-[#A5A58D] text-[#1C1A17] font-extrabold text-xl flex items-center justify-center shadow-md">
                     {member.name.charAt(0)}
                   </div>
                   <div>
-                    <h3 className="font-bold text-base text-white group-hover:text-amber-300 transition-colors">
+                    <h3 className="font-bold text-base text-[#E8E5DF] group-hover:text-[#A49A87] transition-colors">
                       {member.name}
                     </h3>
-                    <p className="text-xs text-amber-400 font-medium">{member.role}</p>
-                    <div className="flex items-center gap-1 text-xs text-slate-300 mt-0.5">
-                      <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                    <p className="text-xs text-[#A49A87] font-medium">{member.role}</p>
+                    <div className="flex items-center gap-1 text-xs text-[#CCC8C3] mt-0.5">
+                      <Star className="w-3.5 h-3.5 fill-[#A49A87] text-[#A49A87]" />
                       <span className="font-semibold">{member.rating || 4.9}</span>
-                      <span className="text-slate-500">• (120+ reviews)</span>
+                      <span className="text-[#968F83]">• (120+ reviews)</span>
                     </div>
                   </div>
                 </div>
 
-                <p className="text-xs text-slate-400 mt-4 leading-relaxed line-clamp-2">
+                <p className="text-xs text-[#968F83] mt-4 leading-relaxed line-clamp-2">
                   {member.bio || 'Specialist in custom haircut designs, razor tapers, and client consultations.'}
                 </p>
 
@@ -521,7 +521,7 @@ export default function SalonPublicStorefront() {
                     {member.specialties.map((spec) => (
                       <span
                         key={spec}
-                        className="text-[10px] font-semibold bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md border border-slate-700/60"
+                        className="text-[10px] font-semibold bg-[#1C1A17] text-[#CCC8C3] px-2 py-0.5 rounded-md border border-[#968F83]/30"
                       >
                         {spec}
                       </span>
@@ -530,10 +530,10 @@ export default function SalonPublicStorefront() {
                 )}
               </div>
 
-              <div className="mt-6 pt-4 border-t border-slate-800/80">
+              <div className="mt-6 pt-4 border-t border-[#968F83]/30">
                 <Link
                   href={`/book?staff=${member.id}`}
-                  className="w-full bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-white font-bold py-2.5 rounded-xl transition-all text-xs flex items-center justify-center gap-2"
+                  className="w-full bg-[#1C1A17] hover:bg-[#A49A87] hover:text-[#1C1A17] text-[#E8E5DF] font-bold py-2.5 rounded-xl transition-all text-xs flex items-center justify-center gap-2 border border-[#968F83]/30"
                 >
                   <Calendar className="w-3.5 h-3.5" />
                   <span>Book with {member.name.split(' ')[0]}</span>
@@ -545,12 +545,12 @@ export default function SalonPublicStorefront() {
       </section>
 
       {/* ── SECTION 4: LOOKBOOK & TRANSFORMATIONS ── */}
-      <section id="lookbook" className="py-20 bg-slate-900/30 border-y border-slate-900">
+      <section id="lookbook" className="py-20 bg-[#262420]/40 border-y border-[#968F83]/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <div>
-              <span className="text-xs font-bold text-amber-400 uppercase tracking-widest">Portfolio</span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-1">
+              <span className="text-xs font-bold text-[#A49A87] uppercase tracking-widest">Portfolio</span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#E8E5DF] mt-1">
                 Recent Transformations
               </h2>
             </div>
@@ -558,7 +558,7 @@ export default function SalonPublicStorefront() {
               href={SALON_CONFIG.contact.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-xs font-semibold text-amber-400 hover:text-amber-300 transition-colors mt-4 md:mt-0"
+              className="inline-flex items-center gap-2 text-xs font-semibold text-[#A49A87] hover:text-[#B3A794] transition-colors mt-4 md:mt-0"
             >
               <Instagram className="w-4 h-4" />
               <span>Follow @zenymestudio on Instagram</span>
@@ -570,16 +570,16 @@ export default function SalonPublicStorefront() {
             {SALON_CONFIG.media.lookbook.map((item, i) => (
               <div
                 key={i}
-                className="group relative overflow-hidden rounded-2xl border border-slate-800 aspect-square"
+                className="group relative overflow-hidden rounded-2xl border border-[#968F83]/30 aspect-square"
               >
                 <img
                   src={item.url}
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-3 flex flex-col justify-end">
-                  <p className="text-[10px] text-amber-400 font-bold uppercase">{item.category}</p>
-                  <p className="text-xs font-bold text-white truncate">{item.title}</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1C1A17] via-[#1C1A17]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-3 flex flex-col justify-end">
+                  <p className="text-[10px] text-[#A49A87] font-bold uppercase">{item.category}</p>
+                  <p className="text-xs font-bold text-[#E8E5DF] truncate">{item.title}</p>
                 </div>
               </div>
             ))}
@@ -590,11 +590,11 @@ export default function SalonPublicStorefront() {
       {/* ── SECTION 5: VERIFIED REVIEWS & SOCIAL PROOF ── */}
       <section id="reviews" className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-xs font-bold text-amber-400 uppercase tracking-widest">Client Love</span>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mt-1">
+          <span className="text-xs font-bold text-[#A49A87] uppercase tracking-widest">Client Love</span>
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#E8E5DF] tracking-tight mt-1">
             Over 500+ Five-Star Reviews
           </h2>
-          <p className="text-slate-400 mt-3 text-sm">
+          <p className="text-[#968F83] mt-3 text-sm">
             Read what our clients say about their experience, punctuality, and stylist consultations.
           </p>
         </div>
@@ -603,30 +603,30 @@ export default function SalonPublicStorefront() {
           {SALON_CONFIG.testimonials.map((testi, i) => (
             <div
               key={i}
-              className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between"
+              className="bg-[#262420]/80 border border-[#968F83]/30 rounded-2xl p-6 flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center gap-1 text-amber-400 mb-3">
+                <div className="flex items-center gap-1 text-[#A49A87] mb-3">
                   {Array.from({ length: testi.rating }).map((_, r) => (
-                    <Star key={r} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                    <Star key={r} className="w-4 h-4 fill-[#A49A87] text-[#A49A87]" />
                   ))}
                 </div>
-                <p className="text-sm text-slate-300 italic leading-relaxed">
+                <p className="text-sm text-[#CCC8C3] italic leading-relaxed">
                   &ldquo;{testi.review}&rdquo;
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <div className="mt-6 pt-4 border-t border-[#968F83]/30 flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-500 to-amber-300 text-slate-950 font-extrabold text-xs flex items-center justify-center border border-amber-400/40 shadow-sm">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#A49A87] to-[#A5A58D] text-[#1C1A17] font-extrabold text-xs flex items-center justify-center border border-[#A49A87]/40 shadow-sm">
                     {testi.initials}
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-white">{testi.name}</h4>
-                    <p className="text-[11px] text-amber-400/90">{testi.serviceTaken}</p>
+                    <h4 className="text-xs font-bold text-[#E8E5DF]">{testi.name}</h4>
+                    <p className="text-[11px] text-[#A49A87]">{testi.serviceTaken}</p>
                   </div>
                 </div>
-                <span className="text-[10px] text-slate-500">{testi.date}</span>
+                <span className="text-[10px] text-[#968F83]">{testi.date}</span>
               </div>
             </div>
           ))}

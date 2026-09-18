@@ -2,6 +2,52 @@
 
 @theme {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  /* Requested Warm Palette: #A49A87, #A5A58D, #968F83, #E8E5DF */
+  --color-warm-50: #F9F8F6;
+  --color-warm-100: #E8E5DF; /* requested #E8E5DF */
+  --color-warm-200: #D8D3C8;
+  --color-warm-300: #C2B8A8;
+  --color-warm-400: #B3A794;
+  --color-warm-500: #A49A87; /* requested #A49A87 */
+  --color-warm-600: #8C8270;
+  --color-warm-700: #6F6656;
+  --color-warm-800: #4B453A;
+  --color-warm-900: #2C2923;
+  --color-warm-950: #1C1A17;
+
+  --color-sage-100: #F4F4F0;
+  --color-sage-200: #E4E4D9;
+  --color-sage-300: #C7C7B2;
+  --color-sage-400: #A5A58D; /* requested #A5A58D */
+  --color-sage-500: #8C8C72;
+  --color-sage-600: #71715A;
+  --color-sage-700: #555543;
+  --color-sage-800: #3C3C2E;
+
+  --color-stone-100: #F5F4F3;
+  --color-stone-200: #E6E4E1;
+  --color-stone-300: #CCC8C3;
+  --color-stone-400: #B3ADA6;
+  --color-stone-500: #968F83; /* requested #968F83 */
+  --color-stone-600: #7C756A;
+  --color-stone-700: #605B52;
+  --color-stone-800: #423F39;
+  --color-stone-900: #262420;
+  --color-stone-950: #1A1916;
+
+  /* Aliases to map legacy color classes seamlessly to the new warm theme */
+  --color-amber-400: #A49A87;
+  --color-amber-500: #A49A87;
+  --color-amber-600: #8C8270;
+  --color-amber-300: #C2B8A8;
+  --color-amber-200: #D8D3C8;
+  --color-amber-100: #E8E5DF;
+
+  --color-indigo-600: #8C8270;
+  --color-indigo-700: #6F6656;
+  --color-indigo-50: #E8E5DF;
+  --color-indigo-100: #D8D3C8;
 }
 
 @layer base {
@@ -10,7 +56,7 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-slate-200, currentColor);
+    border-color: var(--color-stone-200, currentColor);
   }
 }
 
@@ -26,5 +72,9 @@ body {
 }
 
 body {
-  @apply bg-slate-50 text-slate-900 antialiased;
+  background-color: #F9F8F6;
+  color: #262420;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
 }
+

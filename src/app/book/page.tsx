@@ -191,31 +191,31 @@ function BookingWizard() {
   const whatsAppLink = `https://wa.me/${SALON_CONFIG.contact.whatsappNumber}?text=${whatsAppMessage}`;
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans pb-16">
+    <div className="min-h-screen bg-[#1C1A17] text-[#E8E5DF] font-sans pb-16">
       {/* ── Public Header ── */}
-      <header className="border-b border-slate-800 bg-slate-900/90 backdrop-blur-md sticky top-0 z-40">
+      <header className="border-b border-[#968F83]/30 bg-[#1C1A17]/90 backdrop-blur-md sticky top-0 z-40">
         <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2.5 text-lg font-bold text-white group">
-            <div className="bg-gradient-to-tr from-amber-500 to-amber-700 text-slate-950 p-2 rounded-xl shadow-md group-hover:scale-105 transition-transform">
-              <Scissors className="w-5 h-5 text-slate-950 stroke-[2.5]" />
+          <Link href="/" className="flex items-center gap-2.5 text-lg font-bold text-[#E8E5DF] group">
+            <div className="bg-gradient-to-tr from-[#A49A87] to-[#A5A58D] text-[#1C1A17] p-2 rounded-xl shadow-md group-hover:scale-105 transition-transform">
+              <Scissors className="w-5 h-5 text-[#1C1A17] stroke-[2.5]" />
             </div>
             <div>
-              <span className="tracking-tight text-white block leading-tight">{SALON_CONFIG.shortName}</span>
-              <span className="text-[10px] text-amber-400 font-medium tracking-widest uppercase">Online Booking</span>
+              <span className="tracking-tight text-[#E8E5DF] block leading-tight">{SALON_CONFIG.shortName}</span>
+              <span className="text-[10px] text-[#A49A87] font-medium tracking-widest uppercase">Online Booking</span>
             </div>
           </Link>
           <div className="flex items-center gap-3">
             <Link
               href="/"
-              className="text-xs text-slate-400 hover:text-white transition-colors"
+              className="text-xs text-[#968F83] hover:text-[#E8E5DF] transition-colors"
             >
               Back to Home
             </Link>
             <Link
               href="/dashboard"
-              className="text-xs text-slate-300 hover:text-white flex items-center gap-1.5 font-medium bg-slate-800 hover:bg-slate-700 px-3 py-1.5 rounded-lg border border-slate-700 transition-colors"
+              className="text-xs text-[#CCC8C3] hover:text-[#E8E5DF] flex items-center gap-1.5 font-medium bg-[#262420] hover:bg-[#332F2A] px-3 py-1.5 rounded-lg border border-[#968F83]/40 transition-colors"
             >
-              <Building2 className="w-3.5 h-3.5 text-amber-400" />
+              <Building2 className="w-3.5 h-3.5 text-[#A49A87]" />
               <span>Staff Portal</span>
             </Link>
           </div>
@@ -238,15 +238,15 @@ function BookingWizard() {
                   <div
                     className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs transition-all ${
                       step >= s.num
-                        ? 'bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20'
-                        : 'bg-slate-800 text-slate-400 border border-slate-700'
+                        ? 'bg-[#A49A87] text-[#1C1A17] shadow-md shadow-[#A49A87]/20'
+                        : 'bg-[#262420] text-[#968F83] border border-[#968F83]/30'
                     }`}
                   >
                     {s.num}
                   </div>
                   <span
                     className={`text-[11px] mt-1 font-medium ${
-                      step >= s.num ? 'text-amber-400' : 'text-slate-500'
+                      step >= s.num ? 'text-[#A49A87]' : 'text-[#968F83]'
                     }`}
                   >
                     {s.label}
@@ -254,9 +254,9 @@ function BookingWizard() {
                 </div>
               ))}
             </div>
-            <div className="w-full bg-slate-800 h-1 rounded-full overflow-hidden max-w-md mx-auto">
+            <div className="w-full bg-[#262420] h-1 rounded-full overflow-hidden max-w-md mx-auto">
               <div
-                className="bg-gradient-to-r from-amber-500 to-amber-400 h-full transition-all duration-300"
+                className="bg-gradient-to-r from-[#A49A87] to-[#A5A58D] h-full transition-all duration-300"
                 style={{ width: `${((step - 1) / 3) * 100}%` }}
               />
             </div>

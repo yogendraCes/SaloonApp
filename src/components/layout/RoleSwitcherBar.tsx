@@ -29,16 +29,16 @@ export function RoleSwitcherBar() {
   };
 
   return (
-    <div className="bg-slate-900 text-white px-4 py-2.5 flex flex-wrap items-center justify-between gap-3 shadow-md border-b border-indigo-500/20 text-xs z-50">
+    <div className="bg-[#1C1A17] text-[#E8E5DF] px-4 py-2.5 flex flex-wrap items-center justify-between gap-3 shadow-md border-b border-[#968F83]/20 text-xs z-50">
       <div className="flex items-center gap-2">
-        <div className="flex items-center gap-1.5 bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 px-2.5 py-1 rounded-full font-semibold">
-          <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
+        <div className="flex items-center gap-1.5 bg-[#A49A87]/20 border border-[#A49A87]/30 text-[#E8E5DF] px-2.5 py-1 rounded-full font-semibold">
+          <Sparkles className="w-3.5 h-3.5 text-[#A49A87]" />
           <span>Interactive Role Demo</span>
         </div>
-        <span className="hidden md:inline-flex items-center gap-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded text-[10px] font-medium">
+        <span className="hidden md:inline-flex items-center gap-1 bg-[#A5A58D]/20 border border-[#A5A58D]/30 text-[#A5A58D] px-2 py-0.5 rounded text-[10px] font-medium">
           Public Demo • Open Access
         </span>
-        <span className="hidden lg:inline text-slate-400">Switch workspace view:</span>
+        <span className="hidden lg:inline text-[#968F83]">Switch workspace view:</span>
       </div>
 
       <div className="flex items-center flex-wrap gap-2">
@@ -48,8 +48,8 @@ export function RoleSwitcherBar() {
           onClick={() => handleRoleChange('admin')}
           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-semibold transition-all ${
             activeRole === 'admin' && pathname !== '/book'
-              ? 'bg-indigo-600 text-white shadow-sm ring-1 ring-indigo-400'
-              : 'bg-white/10 hover:bg-white/20 text-slate-300'
+              ? 'bg-[#A49A87] text-[#1C1A17] shadow-sm ring-1 ring-[#A49A87]'
+              : 'bg-white/10 hover:bg-white/20 text-[#E8E5DF]'
           }`}
         >
           <Building2 className="w-3.5 h-3.5" />
@@ -63,11 +63,11 @@ export function RoleSwitcherBar() {
             onClick={() => handleRoleChange('freelancer')}
             className={`flex items-center gap-1.5 px-3 py-1 rounded-md font-semibold transition-all ${
               activeRole === 'freelancer' && pathname !== '/book'
-                ? 'bg-emerald-600 text-white shadow-sm ring-1 ring-emerald-400'
-                : 'text-slate-300 hover:text-white'
+                ? 'bg-[#A5A58D] text-[#1C1A17] shadow-sm ring-1 ring-[#A5A58D]'
+                : 'text-[#E8E5DF] hover:text-white'
             }`}
           >
-            <Scissors className="w-3.5 h-3.5 text-emerald-400" />
+            <Scissors className="w-3.5 h-3.5 text-[#A5A58D]" />
             <span>Freelancer Workspace</span>
           </button>
 
@@ -81,10 +81,10 @@ export function RoleSwitcherBar() {
                   handleRoleChange('freelancer');
                 }
               }}
-              className="bg-transparent text-slate-200 text-xs font-semibold focus:outline-none cursor-pointer py-1 pr-2"
+              className="bg-transparent text-[#E8E5DF] text-xs font-semibold focus:outline-none cursor-pointer py-1 pr-2"
             >
               {staff.map((s) => (
-                <option key={s.id} value={s.id} className="bg-slate-900 text-slate-100">
+                <option key={s.id} value={s.id} className="bg-[#1C1A17] text-[#E8E5DF]">
                   {s.name.split(' ')[0]} ({s.commissionRate}%)
                 </option>
               ))}
@@ -98,11 +98,11 @@ export function RoleSwitcherBar() {
           onClick={() => handleRoleChange('client')}
           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-semibold transition-all ${
             pathname === '/book'
-              ? 'bg-rose-600 text-white shadow-sm ring-1 ring-rose-400'
-              : 'bg-white/10 hover:bg-white/20 text-slate-300'
+              ? 'bg-[#968F83] text-[#1C1A17] shadow-sm ring-1 ring-[#968F83]'
+              : 'bg-white/10 hover:bg-white/20 text-[#E8E5DF]'
           }`}
         >
-          <CalendarCheck className="w-3.5 h-3.5 text-rose-400" />
+          <CalendarCheck className="w-3.5 h-3.5 text-[#E8E5DF]" />
           <span>Client Booking App</span>
         </button>
       </div>

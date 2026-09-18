@@ -53,19 +53,19 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
 
   const sidebarContent = (
     <>
-      <div className="h-16 flex items-center px-6 border-b border-slate-200 flex-shrink-0">
-        <Link href="/dashboard" className="flex items-center gap-2 text-xl font-bold text-slate-900">
-          <div className="bg-indigo-600 text-white p-2 rounded-lg shadow-sm">
+      <div className="h-16 flex items-center px-6 border-b border-[#E8E5DF] flex-shrink-0 bg-[#F5F4F3]">
+        <Link href="/dashboard" className="flex items-center gap-2 text-xl font-bold text-[#262420]">
+          <div className="bg-[#A49A87] text-[#1C1A17] p-2 rounded-lg shadow-sm">
             <Scissors className="w-5 h-5" />
           </div>
           <div className="flex flex-col leading-none">
-            <span>Zenyme</span>
-            <span className="text-[10px] text-slate-400 font-normal tracking-wide mt-0.5">Salon & Freelance SaaS</span>
+            <span className="tracking-tight text-[#262420]">Zenyme</span>
+            <span className="text-[10px] text-[#968F83] font-normal tracking-wide mt-0.5">Salon & Freelance SaaS</span>
           </div>
         </Link>
       </div>
 
-      <nav className="flex-1 px-4 py-6 space-y-1 overflow-y-auto">
+      <nav className="flex-1 px-4 py-6 space-y-1 overflow-y-auto bg-[#F9F8F6]">
         {navigation.map((item) => {
           const isActive = pathname.startsWith(item.href);
           const isFreelancerItem = item.href === '/freelancer';
@@ -74,44 +74,44 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
               key={item.name}
               href={item.href}
               className={cn(
-                'flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-all',
+                'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all',
                 isActive
-                  ? 'bg-indigo-50 text-indigo-700 shadow-sm font-semibold'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50',
-                isFreelancerItem && !isActive && 'text-emerald-700 font-semibold bg-emerald-50/50 hover:bg-emerald-100/50'
+                  ? 'bg-[#E8E5DF] text-[#2C2923] shadow-xs font-semibold border-l-4 border-[#A49A87]'
+                  : 'text-[#605B52] hover:text-[#1A1916] hover:bg-[#E8E5DF]/60',
+                isFreelancerItem && !isActive && 'text-[#555543] font-semibold bg-[#A5A58D]/15 hover:bg-[#A5A58D]/25'
               )}
             >
-              <item.icon className={cn('w-5 h-5', isActive ? 'text-indigo-700' : isFreelancerItem ? 'text-emerald-600' : 'text-slate-400')} />
+              <item.icon className={cn('w-5 h-5', isActive ? 'text-[#8C8270]' : isFreelancerItem ? 'text-[#8C8C72]' : 'text-[#968F83]')} />
               <span>{item.name}</span>
               {isFreelancerItem && (
-                <span className="ml-auto bg-emerald-100 text-emerald-800 text-[10px] font-bold px-1.5 py-0.5 rounded uppercase">New</span>
+                <span className="ml-auto bg-[#A5A58D]/25 text-[#3C3C2E] text-[10px] font-bold px-1.5 py-0.5 rounded uppercase">New</span>
               )}
             </Link>
           );
         })}
       </nav>
 
-      <div className="p-4 border-t border-slate-200 flex-shrink-0 bg-slate-50/50">
-        <div className="flex items-center gap-3 px-2 py-2 bg-white rounded-lg border border-slate-200/80 shadow-xs">
+      <div className="p-4 border-t border-[#E8E5DF] flex-shrink-0 bg-[#F5F4F3]">
+        <div className="flex items-center gap-3 px-2 py-2 bg-white rounded-lg border border-[#E8E5DF] shadow-xs">
           <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs ${
-            activeRole === 'freelancer' ? 'bg-emerald-100 text-emerald-800' : 'bg-indigo-100 text-indigo-700'
+            activeRole === 'freelancer' ? 'bg-[#A5A58D]/25 text-[#3C3C2E]' : 'bg-[#A49A87]/25 text-[#2C2923]'
           }`}>
             {activeRole === 'freelancer' ? currentStaff.name.charAt(0) : 'A'}
           </div>
           <div className="flex-1 min-w-0">
-            <p className="text-xs font-semibold text-slate-900 truncate leading-none">
+            <p className="text-xs font-semibold text-[#262420] truncate leading-none">
               {activeRole === 'freelancer' ? currentStaff.name : 'Admin User'}
             </p>
-            <p className="text-[10px] text-slate-500 truncate mt-1 leading-none">
+            <p className="text-[10px] text-[#7C756A] truncate mt-1 leading-none">
               {activeRole === 'freelancer' ? `Stylist (${currentStaff.commissionRate}% split)` : 'Salon Administrator'}
             </p>
           </div>
         </div>
         <Link
           href="/login"
-          className="mt-3 flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors w-full"
+          className="mt-3 flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-[#605B52] hover:text-[#1A1916] hover:bg-[#E8E5DF]/60 transition-colors w-full"
         >
-          <LogOut className="w-4 h-4 text-slate-400" />
+          <LogOut className="w-4 h-4 text-[#968F83]" />
           Logout
         </Link>
       </div>
@@ -119,7 +119,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
   );
 
   return (
-    <div className="flex flex-col h-screen bg-slate-50 text-slate-900 font-sans overflow-hidden">
+    <div className="flex flex-col h-screen bg-[#F9F8F6] text-[#262420] font-sans overflow-hidden">
       {/* Top Interactive Role Switcher Bar */}
       <RoleSwitcherBar />
 
@@ -127,7 +127,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
         {/* ── Mobile overlay backdrop ── */}
         {sidebarOpen && (
           <div
-            className="fixed inset-0 z-40 bg-slate-900/40 backdrop-blur-sm lg:hidden"
+            className="fixed inset-0 z-40 bg-[#1A1916]/40 backdrop-blur-sm lg:hidden"
             onClick={() => setSidebarOpen(false)}
             aria-hidden="true"
           />
@@ -136,7 +136,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
         {/* ── Mobile drawer sidebar ── */}
         <aside
           className={cn(
-            'fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-slate-200 flex flex-col transition-transform duration-300 ease-in-out lg:hidden',
+            'fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-[#E8E5DF] flex flex-col transition-transform duration-300 ease-in-out lg:hidden',
             sidebarOpen ? 'translate-x-0' : '-translate-x-full'
           )}
         >
@@ -144,7 +144,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
           <button
             type="button"
             onClick={() => setSidebarOpen(false)}
-            className="absolute top-4 right-4 p-1.5 text-slate-400 hover:text-slate-600 rounded-md hover:bg-slate-100 transition-colors z-10"
+            className="absolute top-4 right-4 p-1.5 text-[#968F83] hover:text-[#262420] rounded-md hover:bg-[#E8E5DF]/50 transition-colors z-10"
             aria-label="Close sidebar"
           >
             <X className="w-5 h-5" />
@@ -153,31 +153,31 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
         </aside>
 
         {/* ── Desktop static sidebar ── */}
-        <aside className="hidden lg:flex w-64 bg-white border-r border-slate-200 flex-col flex-shrink-0">
+        <aside className="hidden lg:flex w-64 bg-white border-r border-[#E8E5DF] flex-col flex-shrink-0">
           {sidebarContent}
         </aside>
 
         {/* ── Main content ── */}
         <div className="flex-1 min-w-0 flex flex-col overflow-hidden">
           {/* Mobile top bar with hamburger */}
-          <div className="lg:hidden flex items-center h-14 px-4 border-b border-slate-200 bg-white flex-shrink-0">
+          <div className="lg:hidden flex items-center h-14 px-4 border-b border-[#E8E5DF] bg-white flex-shrink-0">
             <button
               type="button"
               onClick={() => setSidebarOpen(true)}
-              className="p-2 -ml-1 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors"
+              className="p-2 -ml-1 text-[#605B52] hover:text-[#1A1916] hover:bg-[#E8E5DF]/60 rounded-lg transition-colors"
               aria-label="Open sidebar"
             >
               <Menu className="w-5 h-5" />
             </button>
-            <Link href="/dashboard" className="flex items-center gap-2 ml-3 text-lg font-bold text-slate-900">
-              <div className="bg-indigo-600 text-white p-1.5 rounded-md">
+            <Link href="/dashboard" className="flex items-center gap-2 ml-3 text-lg font-bold text-[#262420]">
+              <div className="bg-[#A49A87] text-[#1C1A17] p-1.5 rounded-md">
                 <Scissors className="w-4 h-4" />
               </div>
               <span>Zenyme</span>
             </Link>
           </div>
 
-          <main className="flex-1 overflow-y-auto flex flex-col bg-slate-50">
+          <main className="flex-1 overflow-y-auto flex flex-col bg-[#F9F8F6]">
             {children}
           </main>
         </div>
